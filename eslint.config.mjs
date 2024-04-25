@@ -19,5 +19,6 @@ export default [
   ...compat.extends("standard-with-typescript"),
   { ...pluginReactConfig, settings: { react: { version: "detect" } } },
   { files: ["src/**/*.{ts,tsx}"] },
+  { rules: { "no-extra-boolean-cast": "off" } },
   eslintPluginPrettier,
 ];
