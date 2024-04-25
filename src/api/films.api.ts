@@ -1,8 +1,7 @@
+import { HttpRequestMethod, baseQuery } from '.';
 import { type Film } from '../types';
 
-const filmsURL = 'https://swapi-deno.azurewebsites.net/api/films';
+export const filmsURL = 'https://swapi-deno.azurewebsites.net/api/films';
 
-export const getFilms = async (): Promise<Film[]> => {
-    const response = await fetch(filmsURL);
-    return await response.json();
-};
+export const getFilms = async (): Promise<Film[] | null> =>
+    await baseQuery(HttpRequestMethod.Get, filmsURL);

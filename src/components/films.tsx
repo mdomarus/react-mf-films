@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { type ReactNode, useState } from 'react';
-import { getFilms } from '../api/films.api';
+import React, { useState, type ReactNode } from 'react';
+import { getFilms } from '../api';
 
 export default function Films(): ReactNode {
     const [selected, setSelected] = useState<string | null>(null);
@@ -15,8 +15,8 @@ export default function Films(): ReactNode {
 
     return (
         <>
-            <ol className="p-6">
-                {data.map((film) => (
+            <ol className="p-6" data-testid="films-list">
+                {data?.map((film) => (
                     <li
                         key={film.title}
                         onClick={() => {
@@ -33,7 +33,7 @@ export default function Films(): ReactNode {
                     <h1 className="text-lg">Opening crawl</h1>
                     <cite>
                         {
-                            data.find((film) => film.episode_id === selected)
+                            data?.find((film) => film.episode_id === selected)
                                 ?.opening_crawl
                         }
                     </cite>
