@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState, type ReactNode } from 'react';
+import React, { useState } from 'react';
 import { getFilms } from '../api';
 
-export default function Films(): ReactNode {
+export default function Films() {
     const [selected, setSelected] = useState<string | undefined>();
     const { data, isError, isLoading } = useQuery({
         queryKey: ['films'],

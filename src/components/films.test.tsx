@@ -1,7 +1,6 @@
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 import React from 'react';
-// import { afterAll, afterEach, beforeAll, describe, it } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '../../test-utils';
 import { filmsURL } from '../api';
 import Films from './films';
