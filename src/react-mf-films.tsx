@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import singleSpaReact from "single-spa-react";
-import Root from "./root.component";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import singleSpaReact from 'single-spa-react';
+import rootComponent from './root';
 
 const lifecycles = singleSpaReact({
-  React,
-  ReactDOM,
-  rootComponent: Root,
-  errorBoundary() {
-    return <div className="mt-16">Error</div>;
-  },
+    React,
+    ReactDOM,
+    rootComponent,
+    errorBoundary() {
+        return <div className="mt-16">Error</div>;
+    },
 });
 
 export const bootstrap = lifecycles.bootstrap;
