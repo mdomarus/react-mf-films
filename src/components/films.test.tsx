@@ -55,7 +55,7 @@ describe('Films', () => {
         });
     });
 
-    it('should render films details on click', async () => {
+    it('should render film details on click', async () => {
         render(<Films />);
 
         await waitFor(async () => {
